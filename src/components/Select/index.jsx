@@ -11,7 +11,7 @@ const Select = ({
 }) => {
   return (
     <>
-      <label className="label">
+      <label className="label" style={{ paddingBottom: "15px" }}>
         {label} {required && <span>*</span>}
       </label>
       <select

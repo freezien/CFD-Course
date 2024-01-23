@@ -43,7 +43,7 @@ const PaymentOrder = ({ handleChange, selectedPayment }) => {
           {PAYMENTS.map((payment) => {
             const { id, icon, label, description } = payment || {};
             return (
-              <div className="boxorder__pay">
+              <div className="boxorder__pay" key={id}>
                 <label className="radiocontainer">
                   <img src={icon || ""} alt={label || ""} />
                   {label || ""}

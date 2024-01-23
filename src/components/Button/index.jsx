@@ -32,6 +32,7 @@ const Button = ({
         loading ? "--processing" : ""
       }`}
       {...rest}
+      style={{ width: "100%" }}
     >
       {children}
       {loading && (

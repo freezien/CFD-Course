@@ -53,64 +53,48 @@ const ContactForm = ({}) => {
       {" "}
       <div className="form">
         <h3 className="title --t3">Gửi yêu cầu hỗ trợ</h3>
-        <div className="form-group">
-          <Input
-            label="Họ và tên"
-            placeholder="Nhập họ và tên"
-            {...register("name")}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            label="Email"
-            placeholder="Nhập email"
-            {...register("email")}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            label="Số điện thoại"
-            placeholder="Nhập số điện thoại"
-            {...register("phone")}
-          />
-        </div>
-        <div className="form-group">
-          <Select
-            label="chủ đề cần hỗ trợ"
-            required
-            options={[
-              {
-                value: "-",
-                label: "--",
-              },
-              {
-                value: "web",
-                label: "Web Responsive",
-              },
-              {
-                value: "react",
-                label: "ReactJs",
-              },
-              {
-                value: "html",
-                label: "HTML/CSS",
-              },
-            ]}
-            {...register("topic")}
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            label="Mô tả"
-            renderInput={(inputProps) => <TextArea {...inputProps} />}
-            {...register("content")}
-          />
-        </div>
-        <div className="btncontrol">
-          <Button variant="primary" onClick={_onSubmit}>
-            Gửi
-          </Button>
-        </div>
+        <Input
+          label="Họ và tên"
+          placeholder="Nhập họ và tên"
+          {...register("name")}
+        />
+        <Input label="Email" placeholder="Nhập email" {...register("email")} />
+        <Input
+          label="Số điện thoại"
+          placeholder="Nhập số điện thoại"
+          {...register("phone")}
+        />
+        <Select
+          label="chủ đề cần hỗ trợ"
+          required
+          options={[
+            {
+              value: "-",
+              label: "--",
+            },
+            {
+              value: "web",
+              label: "Web Responsive",
+            },
+            {
+              value: "react",
+              label: "ReactJs",
+            },
+            {
+              value: "html",
+              label: "HTML/CSS",
+            },
+          ]}
+          {...register("topic")}
+        />
+        <Input
+          label="Mô tả"
+          renderInput={(inputProps) => <TextArea {...inputProps} />}
+          {...register("content")}
+        />
+        <Button variant="primary" onClick={_onSubmit}>
+          Gửi
+        </Button>
       </div>
     </>
   );

@@ -9,13 +9,6 @@ import ComponentLoading from "../ComponentLoading";
 import { Link } from "react-router-dom";
 import { PATHS } from "../../constant/pathname";
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  min-width: 425px;
-  gap: 10px;
-`;
-
 const RegisterForm = () => {
   const { onRegister, renderForm, setRenderForm, closeAuthenModal } =
     useAuthen();
@@ -31,7 +24,7 @@ const RegisterForm = () => {
       name: [requireRule("Nhập họ và tên")],
       email: [
         requireRule("Nhập email"),
-        regrexRule("Vui lòng nhập email đúng định dạng"),
+        regrexRule("email", "Vui lòng nhập email đúng định dạng"),
       ],
       password: [requireRule("Vui lòng nhập mật khẩu")],
       confirmPassword: [
@@ -88,7 +81,7 @@ const RegisterForm = () => {
           </a>
         </div>
         <span className="line">Hoặc</span>
-        <Form onSubmit={onSubmit} className="form">
+        <form onSubmit={onSubmit} className="form">
           <Input
             label="Họ và tên"
             placeholder="Họ và tên"
@@ -115,7 +108,10 @@ const RegisterForm = () => {
             required
             {...register("confirmPassword")}
           />
-          <p className="form__argee" style={{ margin: "0 auto" }}>
+          <p
+            className="form__argee"
+            style={{ margin: "0 auto", textAlign: "center" }}
+          >
             Với việc đăng ký, bạn đã đồng ý{` `}
             <Link
               className="color--primary"
@@ -152,7 +148,7 @@ const RegisterForm = () => {
           >
             Đăng ký
           </Button>
-        </Form>
+        </form>
       </div>
     </>
   );

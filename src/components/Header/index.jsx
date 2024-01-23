@@ -43,8 +43,8 @@ const Header = () => {
       >
         <div className="container-fluid">
           <HeaderHambuger />
-          {/* <HeaderLogo /> */}
-          <HeaderAuthen />
+          <HeaderLogo />
+          {/* <HeaderAuthen /> */}
           {/* user logged */}
           <HeaderLogged />
         </div>
